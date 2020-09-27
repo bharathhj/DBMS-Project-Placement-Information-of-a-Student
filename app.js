@@ -18,7 +18,14 @@ var    indexRoutes  = require("./routes/index");
 
 
 
-mongoose.connect("mongodb://localhost/dsatm_pi");
+// mongoose.connect("mongodb://localhost/dsatm_pi");
+mongoose.connect("mongodb+srv://Bharath:Bharath@cluster0.kbhfs.mongodb.net/DSATM_P_I?retryWrites=true&w=majority",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+// mongodb+srv://Bharath:<password>@cluster0.kbhfs.mongodb.net/<dbname>?retryWrites=true&w=majority
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+ "/public"));
@@ -274,7 +281,7 @@ app.use("/firms/:id/infos", infoRoutes);
 //     res.redirect("/login");
 // }
 
-app.listen(3000, function(){
+app.listen(1200, function(){
     console.log("The DSATM Placement Inn Server Has Started!");
 //    console.log(process.env.PORT, process.env.IP);
 });
