@@ -19,7 +19,7 @@ var    indexRoutes  = require("./routes/index");
 
 
 // mongoose.connect("mongodb://localhost/dsatm_pi");
-mongoose.connect("mongodb+srv://Bharath:Bharath@cluster0.kbhfs.mongodb.net/DSATM_P_I?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://Bharath:nDHv0Z00hhZXr5F7@cluster0.kbhfs.mongodb.net/DSATM_P_I?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
