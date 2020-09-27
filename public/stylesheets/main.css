@@ -1,0 +1,14 @@
+body {
+    /*background: blueviolet;*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.dsatm.edu.in/images/campoustour.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.fcolor{
+    color: aliceblue;
+}
+

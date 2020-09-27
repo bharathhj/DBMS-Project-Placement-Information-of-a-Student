@@ -1,0 +1,113 @@
+<%- include('../partials/header'); %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">DSATM P I</p>
+
+            <div class="list-group">
+                <form action="/">
+                    <li class="list-group-item">
+                        <input type="radio" id="2015" name="2015" value="2015">
+                        <label for="2015">Aspirants Placed in 2015</label><br>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio" id="2016" name="2016" value="2016">
+                    <label for="2016">Aspirants Placed in 2016</label><br>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio" id="2017" name="2017" value="2017">
+                    <label for="2017">Aspirants Placed in 2017</label><br>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio" id="2018" name="2018" value="2018">
+                    <label for="2018">Aspirants Placed in 2018</label><br>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio" id="2019" name="2019" value="2019">
+                    <label for="2019">Aspirants Placed in 2019</label><br>
+                    </li>
+                    <li class="list-group-item">
+                    <input type="radio" id="2020" name="2020" value="2020">
+                    <label for="2020">Aspirants Placed in 2020</label><br>
+                    </li>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <img class="img-responsive" src="<%= firm.image %>" width="100%" height="520">
+            <br>
+            <br>
+                <div class="card">
+                     <div class="card-body">
+                        <h2><a href="/"><%= firm.name %></a></h2>
+                         <hr>
+                        <p class="float-right"> &nbsp; <%= firm.contact %></p><h5 class="float-right">Phone Number : </h5>
+                        <h5>Address : </h5><p><%= firm.location %></p>
+                         <hr>
+                         <p>
+                             <em>Submitted by: <%= firm.author.username %></em>
+                         </p>
+                         <% if(currentUser && firm.author.id.equals(currentUser._id)){ %>
+                             <a class="btn btn-warning" href="/firms/<%= firm._id %>/edit">Edit</a>
+                             <form style="display: inline" action="/firms/<%= firm._id %>?_method=DELETE" method="POST" >
+                                 <button class="btn btn-danger">Delete</button>
+                             </form>
+                         <% } %>
+                     </div>
+                </div>
+            <br>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-right">
+                        <a class="btn btn-success" href="/firms/<%= firm._id %>/infos/new">Add New Info</a>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <% firm.infos.forEach(function(info){ %>
+                            <div class="col-md-12 mb-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="float-left">
+                                            <p class="card-title"><strong>Name of Aspirant : </strong><%= info.author.username %></p>
+                                            <p class="card-title"><strong>Batch : </strong><%= info.year %></p>
+                                            <p class="card-title"><strong>Job Role : </strong><%= info.role %></p>
+                                            <p class="card-title"><strong>Job Description : </strong><%= info.description %></p>
+                                            <p class="card-title"><strong>Benefits : </strong><%= info.benefit %></p>
+                                            <p class="card-title"><strong>Review :</strong> <%= info.text %></p>
+                                            <% if(currentUser && info.author.id.equals(currentUser._id)){ %>
+                                            <a class="btn btn-xs btn-warning" href="/firms/<%= firm._id %>/infos/<%= info._id%>/edit">Edit</a>
+                                            <form style="display:inline" action="/firms/<%= firm._id %>/infos/<%= info._id%>?_method=DELETE" method="POST">
+                                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                            </form>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer'); %>

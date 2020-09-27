@@ -1,0 +1,37 @@
+<%- include('../partials/header'); %>
+
+<div class="row justify-content-center">
+    <div class="col-md-12 text-center">
+        <h1>Add Your Information to <%= firm.name %></h1>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+        <form action="/firms/<%= firm._id %>/infos" method="POST">
+            <div class="form-group">
+                <label for="year">Accademic Year</label>
+                <input class="form-control" type="number" name="info[year]" id="year" placeholder="2015" step="1" min="2015" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Job Role</label>
+                <input class="form-control" type="text" name="info[role]" id="role" placeholder="Job Role in the Company">
+            </div>
+            <div class="form-group">
+                <label for="description">Why work with this Firm</label>
+                <input class="form-control" type="text" name="info[description]" id="description" placeholder="Development Aspects or Service Oriented . . .">
+            </div>
+            <div class="form-group">
+                <label for="benefit">Benefits</label>
+                <input class="form-control" type="text" name="info[benefit]" id="benifit" placeholder="Employer Summary">
+            </div>
+            <div class="form-group">
+                <label for="text">Review</label>
+                <input class="form-control" type="text" name="info[text]" placeholder="Review">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+            </div>
+        </form>
+        <a href="/firms">Go Back</a>
+    </div>
+</div>
+
+<%- include('../partials/footer'); %>
