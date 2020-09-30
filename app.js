@@ -281,7 +281,9 @@ app.use("/firms/:id/infos", infoRoutes);
 //     res.redirect("/login");
 // }
 
-app.listen(1200, function(){
+var PORT = process.env.PORT || 8000;
+
+app.listen(PORT, function(){
     console.log("The DSATM Placement Inn Server Has Started!");
 //    console.log(process.env.PORT, process.env.IP);
 });
