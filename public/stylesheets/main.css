@@ -1,6 +1,6 @@
 body {
     /*background: blueviolet;*/
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.dsatm.edu.in/images/campoustour.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/8.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -8,7 +8,30 @@ body {
     height: 100vh;
 }
 
-.fcolor{
+.firm-effects {
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+
+.firm-effects:hover {
+    transform: scale(1.15);
+    background-size: cover;
+}
+
+
+.fcolor {
     color: aliceblue;
 }
 
+.ftext {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #212529;
+    text-align: center;
+    color: rgba(255,255,255,.5);
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-size: 100%;
+}
