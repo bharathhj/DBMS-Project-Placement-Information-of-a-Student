@@ -1,2 +1,2 @@
-Web Application Url : https://bharath-infotest.herokuapp.com/firms
+Web Application Url : https://bharath-infotest.herokuapp.com
 
