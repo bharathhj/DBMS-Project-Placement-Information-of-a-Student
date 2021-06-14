@@ -73,7 +73,7 @@
                                             <p class="card-title"><strong>Batch : </strong><%= info.year %></p>
                                             <p class="card-title"><strong>Job Role : </strong><%= info.role %></p>
                                             <p class="card-title"><strong>Job Description : </strong><%= info.description %></p>
-                                            <p class="card-title"><strong>Benefits : </strong><%= info.benefit %></p>
+                                            <p class="card-title"><strong>Interview : </strong><%= info.benefit %></p>
                                             <p class="card-title"><strong>Review :</strong> <%= info.text %></p>
                                             <% if(currentUser && info.author.id.equals(currentUser._id)){ %>
                                             <a class="btn btn-xs btn-warning" href="/firms/<%= firm._id %>/infos/<%= info._id%>/edit">Edit</a>
